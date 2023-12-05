@@ -1,0 +1,45 @@
+<h1 >{{title}}</h1>
+<div class="container d-flex justify-content-center align-items-center div">
+    <form [formGroup]="reportForm" (ngSubmit)="onSubmit()">
+        <label for="baddie">Baddie:</label>
+        <input type="text" id="baddie" formControlName="baddie" />
+        <br /><br />
+    
+        <label for="reportedBy">Reported By:</label>
+        <input type="text" id="reportedBy" formControlName="reportedBy" />
+        <br /><br />
+    
+        <label for="phnNO">Phone Number:</label>
+        <input type="number" id="phnNO" formControlName="phnNo" />
+        <br /><br />
+    
+        <label for="extraInfo">Extra Info:</label>
+        <input type="text" id="extraInfo" formControlName="extraInfo" />
+        <br /><br />
+
+        <label for="imgURL">Image URL:</label>
+        <input type="text" id="imgURL" formControlName="imgURL" />
+        <br /><br />
+    
+        <label for="location">Location:</label>
+        <input type="text" id="location" formControlName="location" (input)="onLocationInput($event)" />
+        <ul *ngIf="showDropdown" class="dropdown">
+          <li *ngFor="let loc of suggestedLocations" (click)="onLocationSelected(loc)">
+            {{ loc }}
+          </li>
+        </ul>
+        <br /><br />
+      
+        <label for="longitude">Longitude:</label>
+        <input type="number" id="longitude" formControlName="longitude" />
+        <br /><br />
+      
+        <label for="latitude">Latitude:</label>
+        <input type="number" id="latitude" formControlName="latitude" />
+        <br /><br />
+      
+        <button type="submit" class="btn btn-outline-primary"
+        [disabled]="!reportForm.valid">Submit</button>
+      </form>
+      
+</div>

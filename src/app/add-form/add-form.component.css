@@ -1,0 +1,54 @@
+.dropdown {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-height: 150px;
+    overflow-y: auto;
+  }
+  
+  .dropdown li {
+    padding: 8px;
+    cursor: pointer;
+  }
+  
+  .dropdown li:hover {
+    background-color: #f0f0f0;
+  }
+  h1{
+    text-align: center;
+  }
+
+  #baddie{
+    margin-left: 55px;
+  }
+
+  #reportedBy{
+    margin-left: 15px;
+  }
+
+  #extraInfo{
+    margin-left: 34px;
+  }
+
+  #location{
+    margin-left: 40px;
+  }
+
+  #longitude{
+    margin-left: 30px;
+  }
+  
+  #latitude{
+    margin-left: 40px;
+  }
+
+  .div{
+    border: 1px solid black;
+    border-radius: 0.5em;
+  }
+
+  #imgURL{
+    margin-left: 28px;
+  }

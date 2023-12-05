@@ -1,0 +1,14 @@
+<h1>More info about {{r.bad}}</h1>
+<div class="container">
+    <img [src]="r!.imgURL" alt="Report Image" *ngIf="r?.imgURL" class="IMG"/> <br>
+    <span>Baddie's name: {{r.bad}}</span><br>
+    <span>Location: {{r.location}}</span><br>
+    <span>Reported by: {{r.reportedBy}}</span><br>
+    <span>Time: {{r.date | date: 'yyyy-MM-dd (hh:mm a)'}}</span><br>
+    <span> {{ r.status ? 'Status: Resolved' : 'Status: Open' }} <button type="button" class="btn btn-primary" (click)="changeStatus()">CHANGE</button></span><br>
+    <span>Extra Info: {{r.extraInfo}}</span>
+    <br>
+    <br>
+    <button type="button" class="btn btn-primary" (click)="goBack()">Go Back</button>
+
+</div>

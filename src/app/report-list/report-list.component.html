@@ -1,0 +1,24 @@
+<h1>{{ title }}</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th class="col-md-2 loc" (click)="sortReports('location')">Location</th>
+      <th class="col-md-3 time" (click)="sortReports('date')">Time Reported</th>
+      <th class="col-md-2 baddie" (click)="sortReports('bad')">Baddie's Name</th>
+      <th class="col-md-2 stat" (click)="sortReports('status')">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let report of reportList">
+      <!-- Access report properties directly within the loop -->
+      <td>{{ report.location }}</td>
+      <td>{{ report.date | date: 'yyyy-MM-dd (hh:mm a)' }}</td>
+      <td>{{ report.bad }}</td>
+      <td>{{ report.status ? 'RESOLVED' : 'OPEN' }}</td>
+      <td><a [routerLink]="['/more', report.date]">MORE INFO</a></td>
+      <td><button  class="btn btn-danger mx-1" (click)="deleteRep(report.date)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
+<button type="button" class="btn btn-primary col-md-12" (click)="navTOForm()">Create Nuisance Report</button>
